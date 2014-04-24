@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>GoAngular</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png" />
+
+    <script type="text/javascript" src="//use.typekit.net/ohz7adf.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
+  <body>
+    <header id="hero">
+      <div class="main-nav">
+        <section>
+          <h1 id="site-id"><a href="/">GoAngular</a></h1>
+          <a href="#" class="menu-toggle">
+            <i class="icon icon-burger"></i>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="#getting-started">Getting Started</a></li>
+              <li><a href="#tutorials">Tutorials</a></li>
+              <!-- <li><a href="#example-apps">Example Apps</a></li> -->
+              <li><a href="https://developers.goinstant.com/v1/GoAngular/index.html" target="_blank">Documentation</a></li>
+            </ul>
+            <a href="https://github.com/goinstant/goangular" target="_blank"><i class="icon icon-gh"></i> View code on Github</a>
+          </nav>
+        </section>
+      </div>
+      <section class="hero-messaging">
+        <h1>AngularJS &#43; GoInstant</h1>
+        <h2>Focus on building your Angular application, we've got your back(end).</h2>
+        <a href="http://goinstant.com/signup" class="button" target="_blank">Sign up with GoInstant to get started <i class="icon icon-arrow-right"></i></a>
+      </section>
+    </header>
+    <section class="main-wrapper">
+      <div class="notice">
+        <article>
+          Help us make GoAngular exactly what you need. Send your feedback to <a href="mailto:mattcreager@goinstant.com">mattcreager@goinstant.com</a>, subscribe to our <a href="https://groups.google.com/forum/#!forum/goangular" target="_blank">mailing list</a>, or join us on IRC: <a href="irc://freenode/#goinstant">freenode/#goinstant</a>
+        </article>
+        <aside>
+          <h5>Spread the Word</h5>
+          <ul class="social">
+            <li><iframe src="http://ghbtns.com/github-btn.html?user=goinstant&repo=goangular&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe></li>
+            <li><a href="https://twitter.com/share" class="twitter-share-button" data-via="goinstant" data-lang="en" data-size="large" data-text="Focus on building your Angular app and let GoInstant handle the backend" data-url="http://goangular.org">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="main">
+        <ul class="values">
+          <li>
+            <span class="rapid-dev"></span>
+            <h3>Optimized for rapid development</h3>
+            <p>Quickly add data-synchronization and collaboration features to your Angular app</p>
+          </li>
+          <li>
+            <span class="complete-control"></span>
+            <h3>Complete control when it matters</h3>
+            <p>Simply synchronize an entire data model, or customize how synchronization is managed</p>
+          </li>
+          <li>
+            <span class="config-sync"></span>
+            <h3>Open source &amp; fully tested</h3>
+            <p>An open-source, community driven integration backed by proper tests</p>
+          </li>
+        </ul>
+      </div>
+      <div class="installation main well">
+        <article>
+          <h2>Installation</h2>
+          <p>Get up and running in minutes, without writing server-side code or configuring databases. Just include &amp; configure GoAngular, instantiate, initialize, and your Angular application is multi-user!</p>
+        </article>
+        <aside>
+          <div class="tabs">
+            <div class="tab">
+              <input type="radio" id="tab-1" name="tab-group-1" checked>
+              <label for="tab-1">CDN Link</label>
+              <div class="tab-content">
+                <div class="code-snip">
+                  <input type="text" id="code-snip-1" readonly value='<script type="text/javacript" src="https://cdn.goinstant.net/integrations/goangular/latest/goangular.min.js"></script>'>
+                  <a href="#" class="copy-code-snip" data-clipboard-target="code-snip-1"><i class="icon icon-clipboard"></i></a>
+                </div>
+                <label><span>More Versions:</span> <a href="https://cdn.goinstant.net/integrations/goangular/latest/goangular.min.js" target="_blank">Production (min +gzip 64kb)</a> | <a href="https://cdn.goinstant.net/integrations/goangular/latest/goangular.js" target="_blank">Debug</a> | <a href="https://cdn.goinstant.net/" target="_blank">CDN Version Listing</a></label>
+              </div>
+            </div>
+            <div class="tab">
+              <input type="radio" id="tab-2" name="tab-group-1">
+              <label for="tab-2">Bower</label>
+              <div class="tab-content">
+                <div class="code-snip">
+                  <input type="text" id="code-snip-2" readonly value='bower install goangular'>
+                  <a href="#" class="copy-code-snip" data-clipboard-target="code-snip-2"><i class="icon icon-clipboard"></i></a>
+                </div>
+                <label>As simple as that!</label>
+              </div>
+            </div>
+          </div>
+          <h5>
+            <i class="icon icon-gi-mark"></i> To use GoAngular, you must be a member of GoInstant. <a href="http://goinstant.com/signup" target="_blank">Get started for free!</a>
+          </h5>
+        </aside>
+      </div>
+      <div class="main content">
+        <nav class="sidebar">
+          <ul>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#tutorials">Tutorials</a></li>
+            <!-- <li><a href="#example-apps">Example Apps</a></li> -->
+            <li><a href="https://developers.goinstant.com/v1/GoAngular/index.html" target="_blank">Documentation</a></li>
+          </ul>
+        </nav>
+        <section>
+          <article id="getting-started">
+            <h2>Getting Started</h2>
+            <p>GoAngular is a <a href="http://goinstant.com/" target="_blank">GoInstant</a>-powered data synchronization and storage integration built for Angular. It’s the perfect companion for building realtime, collaborative apps. This tutorial will walk you through creating your first GoAngular application and address the massive shortage of chat applications on the web. (OK, we know there isn’t a shortage of chat apps on the web, but there aren’t any like this! OK, there are... but this uses GoAngular, which is awesome, trust me.)</p>
+            <p>Visit the <a href="https://developers.goinstant.com/v1/GoAngular/getting_started.html" target="_blank">GoAngular Getting Started</a> page to see the full tutorial.</p>
+            <div class="video-container">
+              <iframe width="853" height="480" src="//www.youtube.com/embed/u2jCgJG-zSo" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p>Links:  <a href="https://developers.goinstant.com/v1/GoAngular/getting_started.html" target="_blank">Getting Started Tutorial</a>, <a href="https://github.com/mattcreager/goangular-chat-example" target="_blank">Source files</a>, <a href="http://goangular-chat-example.herokuapp.com/" target="_blank">Live Demo</a></p>
+          </article>
+          <article id="tutorials">
+            <h2>Tutorials</h2>
+            <ul class="thumbs">
+              <li><a href="https://goinstant.com/blog/screencast-building-a-christmas-wishlist-with-goangular"><img src="img/tutorials/tutorial-wishlist.png" alt="Tutorial"><h4>Christmas Wishlist</h4></a></li>
+              <li class="coming-soon"><h4>Coming Soon</h4></li>
+              <li class="coming-soon"><h4>Coming Soon</h4></li>
+            </ul>
+          </article>
+<!--           <article id="example-apps">
+            <h2>Example Apps</h2>
+            <ul class="thumbs">
+              <li><a href="#"><img src="http://placekitten.com/g/230/150" alt="Tutorial"><h4>Tutorial Name</h4></a></li>
+            </ul>
+          </article> -->
+        </section>
+      </div>
+      <div class="main contact">
+        <p><span><strong>&copy; 2014 GoInstant &ndash; a <a href="http://salesforce.com">Salesforce.com</a> company. </strong> <a href="https://github.com/goinstant/goangular/blob/master/LICENSE" target="_blank">View license</a></span>Help us make GoAngular exactly what you need. Send your feedback to <a href="mailto:mattcreager@goinstant.com">mattcreager@goinstant.com</a>, subscribe to our <a href="https://groups.google.com/forum/#!forum/goangular" target="_blank">mailing list</a>, or join us on IRC: <a href="irc://freenode/#goinstant">freenode/#goinstant</a></p>
+      </div>
+    </section>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-31940858-4', 'goangular.org');
+      ga('send', 'pageview');
+
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+    <script src="js/vendor/ZeroClipboard.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
