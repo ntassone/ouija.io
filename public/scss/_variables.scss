@@ -1,5 +1,10 @@
 //Colors
 $color-body: #C7C2E4;
+$orange: darken(#FF9C55, 10%);
+$purple: #3F3C53;
+$purpleDark: darken($purple, 5%);
+$purpleLight: lighten($purple, 2%);
+$beige: #eedbb6;
 
 //Fonts
 $font-body:   'runda', Helvetica, Arial, sans-serif;
@@ -17,6 +22,7 @@ $ultra:             900;
 
 //Layout
 $side-padding: 46px;
+$margin: 20px;
 
 //Grid
 $small-screen: new-breakpoint(max-width 945px);

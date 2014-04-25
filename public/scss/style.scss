@@ -8,11 +8,16 @@
   @include box-sizing(border-box);
 }
 
+img {
+  max-width: 100%;
+}
+
 body {
   color: #eee;
   font-family: $font-body;
   font-weight: $light;
   background: url(../img/dust.png);
+  background-attachment: fixed;
 }
 
 a {
@@ -37,20 +42,63 @@ section {
   padding-right: 15px;
 }
 
-@mixin button($text: #fff, $background: $blue, $font-size: .9em) {
+@mixin button($text: $orange, $background: white, $font-size: 19px) {
+  position: relative;
   display: inline-block;
-  padding: .2em .75em .3em;
-  border-radius: 3px;
+  padding: 10px 10px 12px;
+  border-radius: 5px;
   color: $text;
   background-color: $background;
   text-decoration: none;
   text-align: center;
   line-height: 1.5;
   font-size: $font-size;
+  font-family: $font-header;
+  font-weight: $bold;
+  border: 0;
+  @include transition(all .5s $ease-out-expo);
   &:hover {
     background-color: lighten($background, 5%);
   }
+  &:active {
+    outline: none;
+    top: 1px;
+  }
+  &:focus {
+    outline: none;
+    background-color: lighten($background, 5%);
+  }
 }
+
+button,
+input[type="submit"] {
+  @include button(white, fade-out($orange, .2));
+  &:hover {
+    background: $orange;
+  }
+}
+
+input[type="text"],
+input[type="email"] {
+  font-size: 19px;
+  font-family: $font-header;
+  font-weight: $bold;
+  padding: 11px;
+  background: fade-out(white, .2);
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  @include transition();
+  &:hover {
+    background: white;
+  }
+  &:focus {
+    background: white;
+    outline: none;
+    color: $purple;
+  }
+}
+
 
 h1 {
   font-family: $font-header;
@@ -59,6 +107,10 @@ h1 {
 #hero {
   aside {
     @include span-columns(6);
+    @include media(max-width 600px) {
+      @include fill-parent;
+      text-align: center;
+    }
     h1 {
       margin-bottom: .2em;
       font-size: 122px;
@@ -84,18 +136,184 @@ h1 {
   }
   .logo {
     @include span-columns(6);
+    text-align: center;
+    @include media(max-width 600px) {
+      @include fill-parent;
+    }
     div {
       position: relative;
-      margin: 100px 230px;
+      min-height: 1px;
+      margin-top: 100px;
+      @include media(max-width 600px) {
+        display: inline-block;
+        width: 50%;
+        margin-top: 50px;
+        @include transform(scale(.75));
+      }
     }
     img {
       position: absolute;
       z-index: 2;
+      right: 50px;
       &.shadow {
         z-index: 1;
-        top: 24px;
-        left: 7px;
+        top: 22px;
+        right: 40px;
       }
     }
+  }
+  .twitter-share-button {
+    opacity: .4;
+    @include transition();
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.sign-up {
+  @include row();
+  padding: $margin/2 $margin $margin;
+  margin-top: $margin*4;
+  @include media($mobile) {
+    margin-top: 1em;
+  }
+  form {
+    width: 65%;
+    margin: 0 auto;
+    @include media($mobile) {
+      width: 100%;
+    }
+  }
+  p {
+    text-align: center;
+    margin: 1em 0;
+  }
+  input[type='email'] {
+    width: 72%;
+    margin-right: 3%;
+    float: left;
+    @include media($mobile) {
+      @include fill-parent();
+      margin-bottom: 5px;
+      text-align: center;
+    }
+  }
+  input[type="submit"] {
+    width: 25%;
+    float: left;
+    @include media($mobile) {
+      @include fill-parent();
+    }
+  }
+}
+
+.features {
+  @include row();
+  .feature {
+    @include row();
+    margin: $margin*5 0 $margin*3.5;
+    border-top: 3px solid $purpleDark;
+    @include media($mobile) {
+      margin: $margin*2 $margin;
+    }
+  }
+  h2 {
+    font-weight: $light;
+    color: $beige;
+    font-size: 30px;
+  }
+  p {
+    line-height: 1.7;
+    font-size: 18px;
+  }
+  article {
+    @include span-columns(5);
+    padding: $margin $margin 0 $margin*2;
+    @include media($mobile) {
+      @include fill-parent();
+      padding: 0;
+      text-align: center;
+    }
+  }
+  aside {
+    @include span-columns(7);
+    @include media($mobile) {
+      @include fill-parent();
+    }
+    img {
+      margin-top: -20px;
+    }
+  }
+}
+
+.value-props {
+  @include row();
+  margin-bottom: $margin*4;
+  ul {
+    list-style: none;
+  }
+  li {
+    @include span-columns(4);
+    @include pad(0 20px 0 default);
+    @include media($mobile) {
+      @include fill-parent();
+    }
+  }
+  h3 {
+    font-weight: $light;
+    color: $beige;
+    font-size: 19px;
+    margin-left: -28px;
+    @include media($mobile) {
+      margin-bottom: 0;
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      top: 4px;
+      width: 22px;
+      height: 22px;
+      margin-right: 3px;
+      background: $orange;
+      color: white;
+      border-radius: 50%;
+    }
+  }
+  p {
+    line-height: 1.7;
+    @include media($mobile) {
+      margin-top: 5px;
+      padding-left: 2px;
+    }
+  }
+}
+
+#footer {
+  background: $purpleDark;
+  padding: 80px;
+  text-align: center;
+  h3 {
+    margin: 0;
+    font-weight: $light;
+    font-size: 23px;
+    a {
+      opacity: .7;
+      img {
+        position: relative;
+        left: 5px;
+        top: -2px;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  small {
+    display: block;
+    margin-top: .5em;
+    font-size: .8em;
+    letter-spacing: .025em;
+    color: lighten($purpleLight, 25%);
   }
 }
