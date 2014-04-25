@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="198px" height="244px" viewBox="0 0 198 244" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
+    <title>sidelogo</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Site" sketch:type="MSArtboardGroup" transform="translate(-273.000000, -109.000000)" fill="#CED0B4">
+            <g id="Header" sketch:type="MSLayerGroup" transform="translate(247.000000, 85.000000)">
+                <g id="Logo" transform="translate(0.000000, 22.000000)" sketch:type="MSShapeGroup">
+                    <path d="M79.1019634,188.432566 C87.3450552,196.715007 90.1368762,212.152107 96.6392686,223.918717 C101.522491,232.755307 110.871219,241.688592 126.285921,246.714832 C214.201219,269.131595 254.122132,42.7397307 238.775429,27.3192834 C223.428209,11.8983168 0.800262851,65.9634709 27.7128188,147.379909 C38.1206917,178.549992 64.6673704,173.930627 79.1019634,188.432566 Z M195.237801,130.049455 C181.309317,143.9784 158.723732,143.979422 144.793716,130.049455 C130.865232,116.118979 131.706438,90.3950743 145.634922,76.4666403 C159.564938,62.536674 182.14899,62.536674 196.079006,76.4666403 C210.009023,90.3960957 209.167817,116.12 195.237801,130.049455 Z" id="side" transform="translate(133.638100, 136.442603) rotate(-15.000000) translate(-133.638100, -136.442603) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
