@@ -2,6 +2,7 @@
 @import "neat/neat";
 @import "normalize";
 @import "variables";
+@import "fonts";
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -18,6 +19,16 @@ body {
   font-weight: $light;
   background: url(../img/dust.png);
   background-attachment: fixed;
+}
+
+html.js {
+  body {
+    opacity: 1;
+    @include transition(opacity .5s linear);
+    &.preload {
+      opacity: 0;
+    }
+  }
 }
 
 a {
@@ -134,13 +145,13 @@ h1 {
       }
     }
   }
-  .logo {
+  .hero-image {
     @include span-columns(6);
     text-align: center;
     @include media(max-width 600px) {
       @include fill-parent;
     }
-    div {
+    .logo {
       position: relative;
       min-height: 1px;
       margin-top: 100px;
@@ -271,13 +282,12 @@ h1 {
     span {
       position: relative;
       display: inline-block;
-      top: 4px;
       width: 22px;
       height: 22px;
       margin-right: 3px;
-      background: $orange;
-      color: white;
-      border-radius: 50%;
+      color: $orange;
+      font-size: 18px;
+      text-align: center;
     }
   }
   p {

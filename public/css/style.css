@@ -492,6 +492,32 @@ fieldset {
 textarea {
   resize: vertical; }
 
+@font-face {
+  font-family: 'fontello';
+  src: url("../font/fontello.eot?45333172");
+  src: url("../font/fontello.eot?45333172#iefix") format("embedded-opentype"), url("../font/fontello.woff?45333172") format("woff"), url("../font/fontello.ttf?45333172") format("truetype"), url("../font/fontello.svg?45333172#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center; }
+
+.icon-box:before {
+  content: '\e800'; }
+
+.icon-brush:before {
+  content: '\e802'; }
+
+.icon-stopwatch:before {
+  content: '\e801'; }
+
 * {
   -webkit-font-smoothing: antialiased;
   -webkit-box-sizing: border-box;
@@ -507,6 +533,14 @@ body {
   font-weight: 300;
   background: url(../img/dust.png);
   background-attachment: fixed; }
+
+html.js body {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear; }
+  html.js body.preload {
+    opacity: 0; }
 
 a {
   color: #c7c2e4;
@@ -622,23 +656,23 @@ h1 {
       font-size: 25px;
       display: block;
       color: #c7c2e4; }
-#hero .logo {
+#hero .hero-image {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 48.82117%;
   text-align: center; }
-  #hero .logo:last-child {
+  #hero .hero-image:last-child {
     margin-right: 0; }
   @media screen and (max-width: 600px) {
-    #hero .logo {
+    #hero .hero-image {
       width: 100%; } }
-  #hero .logo div {
+  #hero .hero-image .logo {
     position: relative;
     min-height: 1px;
     margin-top: 100px; }
     @media screen and (max-width: 600px) {
-      #hero .logo div {
+      #hero .hero-image .logo {
         display: inline-block;
         width: 50%;
         margin-top: 50px;
@@ -647,11 +681,11 @@ h1 {
         -ms-transform: scale(0.75);
         -o-transform: scale(0.75);
         transform: scale(0.75); } }
-  #hero .logo img {
+  #hero .hero-image img {
     position: absolute;
     z-index: 2;
     right: 50px; }
-    #hero .logo img.shadow {
+    #hero .hero-image img.shadow {
       z-index: 1;
       top: 22px;
       right: 40px; }
@@ -788,13 +822,12 @@ h1 {
     .value-props h3 span {
       position: relative;
       display: inline-block;
-      top: 4px;
       width: 22px;
       height: 22px;
       margin-right: 3px;
-      background: #ff7e22;
-      color: white;
-      border-radius: 50%; }
+      color: #ff7e22;
+      font-size: 18px;
+      text-align: center; }
   .value-props p {
     line-height: 1.7; }
     @media screen and (max-width: 740px) {
