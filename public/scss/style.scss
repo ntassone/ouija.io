@@ -327,3 +327,31 @@ h1 {
     color: lighten($purpleLight, 25%);
   }
 }
+
+
+@include keyframes(logo) {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  25% {
+    left: -25px;
+    top: -25px;
+  }
+  50% {
+    left: -50px;
+    top: 25px;
+  }
+  75% {
+    left: 25px;
+    top: -50px;
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+
+.logo {
+  @include animation(logo 10s $ease-in-out-quart infinite);
+}
