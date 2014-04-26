@@ -6,8 +6,10 @@ $(function() {
 
   $('.sign-up input[type="email"]').select();
 
+  $('body').removeClass('preload');
+
   setTimeout(function() {
-    $('body').removeClass('preload');
-  });
+    $('.main-wrapper').removeClass('preload');
+  }, 900);
 
 });

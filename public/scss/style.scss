@@ -29,6 +29,13 @@ html.js {
       opacity: 0;
     }
   }
+  .main-wrapper {
+    opacity: 1;
+    @include transition(opacity .5s linear);
+    &.preload {
+      opacity: 0;
+    }
+  }
 }
 
 a {

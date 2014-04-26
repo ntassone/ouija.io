@@ -541,6 +541,13 @@ html.js body {
   transition: opacity 0.5s linear; }
   html.js body.preload {
     opacity: 0; }
+html.js .main-wrapper {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear; }
+  html.js .main-wrapper.preload {
+    opacity: 0; }
 
 a {
   color: #c7c2e4;
