@@ -84,6 +84,10 @@ a.button {
   &:hover {
     background: $orange;
   }
+  small {
+    margin-left: .5em;
+    color: fade-out(white, .35);
+  }
 }
 
 input[type="text"],
@@ -293,13 +297,18 @@ h1 {
 }
 
 .readme {
-  @include span-columns(10);
-  @include shift(1);
+  position: relative;
+  padding-top: $margin;
+  border-top: 3px solid $purpleDark;
   > div {
+    @include span-columns(10);
+    @include shift(1);
+  }
+  .installation {
     background: $purpleDark;
     margin-bottom: 80px;
     padding: $margin/2 0 $margin $margin;
-    border-radius: 4px;
+    border-radius: 0 0 4px 4px;
   }
   h2 {
     margin: $margin $margin/2 $margin*2;
@@ -377,6 +386,32 @@ h1 {
           color: lighten($purpleLight, 15%);
         }
       }
+    }
+  }
+}
+
+.banner {
+  padding: $margin;
+  border-radius: 4px 4px 0 0;
+  background: fade-out(white, .9);
+  border-bottom: 2px solid $orange;
+  text-align: center;
+  font-size: .9em;
+  p, h4 {
+    margin: 0;
+    a {
+      color: $beige;
+      border-color: fade-out($beige, .5);
+      &:hover {
+        color: $orange;
+        border-color: $orange;
+      }
+    }
+  }
+  h4 {
+    font-size: 18px;
+    .icon-warning {
+      color: $orange;
     }
   }
 }
