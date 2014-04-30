@@ -32,21 +32,12 @@
             <strong>Spirited conversation.</strong>
             Add inline comments to your <a href="http://ghost.org" target="_blank">Ghost blog</a>.
           </p>
-          <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <a href="#readme" class="button">Install Ouija</a>
         </aside>
       </section>
     </header>
     <section class="main-wrapper preload">
-      <div class="sign-up" id="mc_embed_signup">
-        <p>We're working on Ouija right now! Sign up to get notified when it's released.</p>
-        <form action="http://goinstant.us2.list-manage.com/subscribe/post?u=f6d92398e299cf12d06c18f9d&amp;id=fbddb04863" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" required>
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f6d92398e299cf12d06c18f9d_fbddb04863" value=""></div>
-          <input type="submit" value="Notify me!" name="subscribe" id="mc-embedded-subscribe" class="button">
-        </form>
-      </div>
+      <div class="sign-up"></div>
       <article class="features">
         <div class="feature">
           <aside>
@@ -73,6 +64,37 @@
             <p>Built on SASS, Ouija's styling allows you to easily create themes or tweak the default styles. More to come!</p>
           </li>
         </ul>
+      </article>
+      <article id="readme" class="readme">
+        <div>
+          <h2>How to Install Ouija</h2>
+          <ol>
+            <li>
+              <p>Clone Ouija into your ghost blog's <code>content/apps</code> folder clone Ouija.</p>
+              <pre class="bash"><code>git clone -b develop https://github.com/goinstant/ouija</code></pre>
+            </li>
+            <li>
+              <p>Install and gulp</p>
+              <pre class="bash"><code>npm install</code>
+<code>gulp</code></pre>
+            </li>
+            <li>
+              <p>Add the CSS to the <code>&lt;/head&gt;</code> your blog's <code>default.hbs</code> file.</p>
+              <pre>&lt;link rel="stylesheet" type="text/css" href="{{asset "css/ouija.css"}}" /&gt;</pre>
+            </li>
+            <li>
+              <p>Add the Ouija snippet before your closing <code>&lt;/body&gt;</code> tag.</p>
+              <pre>{{#with post}}
+  &lt;script&gt;
+    window.ouija_connect_url = 'https://goinstant.net/YOURACCOUNT/YOURAPP'
+    window.ouija_identifier = {{id}};
+  &lt;/script&gt;
+  &lt;script src="https://cdn.goinstant.net/v1/platform.min.js"&gt;&lt;/script&gt;
+  &lt;script src="{{asset "js/ouija.js"}}"&gt;&lt;/script&gt;
+{{/with}}</pre>
+            </li>
+          </ol>
+        </div>
       </article>
     </section>
     <footer id="footer">

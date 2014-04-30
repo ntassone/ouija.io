@@ -21,23 +21,6 @@ body {
   background-attachment: fixed;
 }
 
-html.js {
-  body {
-    opacity: 1;
-    @include transition(opacity .5s linear);
-    &.preload {
-      opacity: 0;
-    }
-  }
-  .main-wrapper {
-    opacity: 1;
-    @include transition(opacity .5s linear);
-    &.preload {
-      opacity: 0;
-    }
-  }
-}
-
 a {
   color: $color-body;
   @include transition(all .1s linear);
@@ -54,6 +37,12 @@ p {
   }
 }
 
+h2 {
+  font-weight: $light;
+  color: $beige;
+  font-size: 30px;
+}
+
 section {
   @include outer-container;
   padding-left: 15px;
@@ -63,7 +52,7 @@ section {
 @mixin button($text: $orange, $background: white, $font-size: 19px) {
   position: relative;
   display: inline-block;
-  padding: 10px 10px 12px;
+  padding: 10px 20px 12px;
   border-radius: 5px;
   color: $text;
   background-color: $background;
@@ -89,7 +78,8 @@ section {
 }
 
 button,
-input[type="submit"] {
+input[type="submit"],
+a.button {
   @include button(white, fade-out($orange, .2));
   &:hover {
     background: $orange;
@@ -224,6 +214,7 @@ h1 {
       @include fill-parent();
     }
   }
+
 }
 
 .features {
@@ -235,11 +226,6 @@ h1 {
     @include media($mobile) {
       margin: $margin*2 $margin;
     }
-  }
-  h2 {
-    font-weight: $light;
-    color: $beige;
-    font-size: 30px;
   }
   p {
     line-height: 1.7;
@@ -302,6 +288,88 @@ h1 {
     @include media($mobile) {
       margin-top: 5px;
       padding-left: 2px;
+    }
+  }
+}
+
+.readme {
+  @include span-columns(10);
+  @include shift(1);
+  > div {
+    background: $purpleDark;
+    margin-bottom: 80px;
+    padding: $margin/2 0 $margin $margin;
+    border-radius: 4px;
+  }
+  h2 {
+    margin: $margin $margin/2 $margin*2;
+  }
+  ol {
+    list-style: none;
+    counter-reset: li;
+    padding-left: $margin*2;
+    @include clearfix();
+    li {
+      counter-increment: li;
+      position: relative;
+      padding-left: $margin/2;
+      margin-bottom: $margin*2;
+      @include clearfix();
+      &:before {
+        content: counter(li);
+        display: block;
+        position: absolute;
+        left: -30px;
+        width: 24px;
+        height: 23px;
+        top: 1px;
+        padding-top: 1px;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+        background: $orange;
+        color: $purpleDark;
+      }
+    }
+    p {
+      @include span-columns(4);
+      margin-top: 0;
+      padding-right: $margin;
+      line-height: 1.6;
+      text-align: left;
+      color: lighten($purpleLight, 40%);
+      code {
+        background: $purple;
+        font-size: .9em;
+        padding: 3px 5px;
+        border-radius: 2px;
+      }
+    }
+    pre {
+      @include span-columns(8);
+      margin-top: 0;
+      border-radius: 3px 0 0 3px;
+    }
+  }
+  code, pre {
+    font-family: $font-mono;
+    letter-spacing: .025em;
+    color: white;
+  }
+  pre {
+    background: darken($purpleDark, 5%);
+    padding: $margin/1.5;
+    border-radius: 3px;
+    font-size: 14px;
+    color: white;
+    &.bash {
+      code {
+        &:before {
+          content: "$";
+          margin-right: 1em;
+          color: lighten($purpleLight, 15%);
+        }
+      }
     }
   }
 }

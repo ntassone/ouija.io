@@ -534,21 +534,6 @@ body {
   background: url(../img/dust.png);
   background-attachment: fixed; }
 
-html.js body {
-  opacity: 1;
-  -webkit-transition: opacity 0.5s linear;
-  -moz-transition: opacity 0.5s linear;
-  transition: opacity 0.5s linear; }
-  html.js body.preload {
-    opacity: 0; }
-html.js .main-wrapper {
-  opacity: 1;
-  -webkit-transition: opacity 0.5s linear;
-  -moz-transition: opacity 0.5s linear;
-  transition: opacity 0.5s linear; }
-  html.js .main-wrapper.preload {
-    opacity: 0; }
-
 a {
   color: #c7c2e4;
   -webkit-transition: all 0.1s linear;
@@ -561,6 +546,11 @@ p a {
   p a:hover {
     color: white;
     border-bottom-color: white; }
+
+h2 {
+  font-weight: 300;
+  color: #eedbb6;
+  font-size: 30px; }
 
 section {
   *zoom: 1;
@@ -576,10 +566,11 @@ section {
     clear: both; }
 
 button,
-input[type="submit"] {
+input[type="submit"],
+a.button {
   position: relative;
   display: inline-block;
-  padding: 10px 10px 12px;
+  padding: 10px 20px 12px;
   border-radius: 5px;
   color: white;
   background-color: rgba(255, 126, 34, 0.8);
@@ -594,18 +585,22 @@ input[type="submit"] {
   -moz-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
   button:hover,
-  input[type="submit"]:hover {
+  input[type="submit"]:hover,
+  a.button:hover {
     background-color: rgba(255, 141, 59, 0.8); }
   button:active,
-  input[type="submit"]:active {
+  input[type="submit"]:active,
+  a.button:active {
     outline: none;
     top: 1px; }
   button:focus,
-  input[type="submit"]:focus {
+  input[type="submit"]:focus,
+  a.button:focus {
     outline: none;
     background-color: rgba(255, 141, 59, 0.8); }
   button:hover,
-  input[type="submit"]:hover {
+  input[type="submit"]:hover,
+  a.button:hover {
     background: #ff7e22; }
 
 input[type="text"],
@@ -763,10 +758,6 @@ h1 {
     @media screen and (max-width: 740px) {
       .features .feature {
         margin: 40px 20px; } }
-  .features h2 {
-    font-weight: 300;
-    color: #eedbb6;
-    font-size: 30px; }
   .features p {
     line-height: 1.7;
     font-size: 18px; }
@@ -841,6 +832,97 @@ h1 {
       .value-props p {
         margin-top: 5px;
         padding-left: 2px; } }
+
+.readme {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%; }
+  .readme:last-child {
+    margin-right: 0; }
+  .readme > div {
+    background: #343144;
+    margin-bottom: 80px;
+    padding: 10px 0 20px 20px;
+    border-radius: 4px; }
+  .readme h2 {
+    margin: 20px 10px 40px; }
+  .readme ol {
+    list-style: none;
+    counter-reset: li;
+    padding-left: 40px;
+    *zoom: 1; }
+    .readme ol:before, .readme ol:after {
+      content: " ";
+      display: table; }
+    .readme ol:after {
+      clear: both; }
+    .readme ol li {
+      counter-increment: li;
+      position: relative;
+      padding-left: 10px;
+      margin-bottom: 40px;
+      *zoom: 1; }
+      .readme ol li:before, .readme ol li:after {
+        content: " ";
+        display: table; }
+      .readme ol li:after {
+        clear: both; }
+      .readme ol li:before {
+        content: counter(li);
+        display: block;
+        position: absolute;
+        left: -30px;
+        width: 24px;
+        height: 23px;
+        top: 1px;
+        padding-top: 1px;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+        background: #ff7e22;
+        color: #343144; }
+    .readme ol p {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%;
+      margin-top: 0;
+      padding-right: 20px;
+      line-height: 1.6;
+      text-align: left;
+      color: #aaa6bf; }
+      .readme ol p:last-child {
+        margin-right: 0; }
+      .readme ol p code {
+        background: #3f3c53;
+        font-size: .9em;
+        padding: 3px 5px;
+        border-radius: 2px; }
+    .readme ol pre {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%;
+      margin-top: 0;
+      border-radius: 3px 0 0 3px; }
+      .readme ol pre:last-child {
+        margin-right: 0; }
+  .readme code, .readme pre {
+    font-family: "inconsolata", monospace, sans-serif;
+    letter-spacing: .025em;
+    color: white; }
+  .readme pre {
+    background: #292735;
+    padding: 13.33333px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: white; }
+    .readme pre.bash code:before {
+      content: "$";
+      margin-right: 1em;
+      color: #656085; }
 
 #footer {
   background: #343144;
