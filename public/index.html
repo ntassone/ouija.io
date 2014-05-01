@@ -32,21 +32,12 @@
             <strong>Spirited conversation.</strong>
             Add inline comments to your <a href="http://ghost.org" target="_blank">Ghost blog</a>.
           </p>
-          <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <a href="#readme" class="button">Install Ouija<small>v0.1.0</small></a>
         </aside>
       </section>
     </header>
     <section class="main-wrapper preload">
-      <div class="sign-up" id="mc_embed_signup">
-        <p>We're working on Ouija right now! Sign up to get notified when it's released.</p>
-        <form action="http://goinstant.us2.list-manage.com/subscribe/post?u=f6d92398e299cf12d06c18f9d&amp;id=fbddb04863" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" required>
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f6d92398e299cf12d06c18f9d_fbddb04863" value=""></div>
-          <input type="submit" value="Notify me!" name="subscribe" id="mc-embedded-subscribe" class="button">
-        </form>
-      </div>
+      <div class="sign-up"></div>
       <article class="features">
         <div class="feature">
           <aside>
@@ -74,11 +65,166 @@
           </li>
         </ul>
       </article>
+      <article id="readme" class="readme">
+        <h2>How to Install Ouija</h2>
+        <div class="banner">
+          <h4><span class="icon-warning"></span><span> Heads up:</span> Ouija is not yet ready for production use.</h4>
+          <p>Have questions about this? <a href="http://github.com/goinstant/ouija/issues" target="_blank">Open an issue here.</a></p>
+        </div>
+       <div id="tabs">
+          <ul>
+           <li><a href="#" name="tab1">Quick installation</a></li>
+           <li><a href="#" name="tab2">Developer setup</a></li>
+           <li><a href="#" name="tab3">Create a new GoInstant app</a></li>
+         </ul>
+       </div>
+        <div id="tabs-content">
+          <div id="tab3">
+            <div class="installation">
+              <ol>
+                <li>
+                  <div class="left">
+                    <p>If you haven't already, <a href="http://goinstant.com/signup?src=ouija" target="_blank">sign up for GoInstant</a>. From the GoInstant dashboard, <strong>create a new app</strong> for Ouija.</p>
+                  </div>
+                  <div class="right">
+                    <img src="../img/gi-step-1.png" alt="Create a new GoInstant app">
+                  </div>
+                </li>
+                <li>
+                  <div class="left">
+                    <p>Navigate to your new app's <strong>Authentication</strong> page.</p>
+                  </div>
+                  <div class="right">
+                    <img src="../img/gi-step-2.png" alt="Navigate to Auth">
+                  </div>
+                </li>
+                <li>
+                  <div class="left">
+                    <p>Add your blog's URL as an <strong>Authorized origins</strong>. If you're working locally, you might want to add <code>localhost</code>, too.</p>
+                  </div>
+                  <div class="right">
+                    <img src="../img/gi-step-3.png" alt="Add your blogs URL">
+                  </div>
+                </li>
+                <li>
+                  <div class="left">
+                    <p>Ouija commenters login through Twitter (for now). Turn on Twitter in the list of providers. Don't worry about the settings inside the Twitter box.</p>
+                  </div>
+                  <div class="right">
+                    <img src="../img/gi-step-4.png" alt="Turn on Twitter">
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div id="tab2">
+            <div class="installation">
+              <ol>
+                <li>
+                  <div class="left">
+                    <p>Clone Ouija into your ghost blog's <code>content/apps</code> folder clone Ouija.</p>
+                  </div>
+                  <div class="right">
+                    <pre class="bash"><code>git clone https://github.com/goinstant/ouija</code></pre>
+                  </div>
+                </li>
+                <li>
+                  <div class="left">
+                    <p>Copy the <code>config/ouija.json.example</code> to <code>ouija.json</code> and insert the name of your custom theme folder. If you're using the default theme Casper, you don't need to change anything.</p>
+                  </div>
+                  <div class="right">
+                    <pre>
+{
+  "theme" : "mytheme"
+}</pre>
+                  </div>
+                </li>
+                <li>
+                  <div class="left">
+                    <p>Install (through <a href="https://www.npmjs.org/" target="_blank">npm</a>) and <a href="http://gulpjs.com/" target="blank">gulp</a>.</p>
+                  </div>
+                  <div class="right">
+                    <pre class="bash"><code>npm install</code>
+<code>gulp develop</code></pre>
+                  </div>
+                </li>
+                <li>
+                  <div class="left">
+                    <p>Add the CSS to the <code>&lt;head&gt;</code> section of your blog's <code>default.hbs</code> file.</p>
+                  </div>
+                  <div class="right">
+                    <pre>&lt;link rel="stylesheet" type="text/css" href="{{asset "css/ouija.css"}}" /&gt;</pre>
+                  </div>
+                </li>
+                <li>
+                  <div class="left">
+                    <p>Add the Ouija snippet before your closing <code>&lt;/body&gt;</code> tag. Replace <code>YOURACCOUNT/YOURAPP</code> with your GoInstant details. <small>Ghost uses GoInstant to sync messages in realtime. Not a member yet? <a href="https://goinstant.com/signup?src=ouija" target="_blank">Sign up here.</a></small></p>
+                  </div>
+                  <div class="right">
+                    <pre>{{#with post}}
+&lt;script&gt;
+  window.ouija_connect_url = 'https://goinstant.net/YOURACCOUNT/YOURAPP'
+  window.ouija_identifier = {{id}};
+&lt;/script&gt;
+&lt;script src="https://cdn.goinstant.net/v1/platform.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset "js/ouija.js"}}"&gt;&lt;/script&gt;
+{{/with}}</pre>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div id="tab1">
+            <div class="installation">
+              <ol>
+                <li>
+                  <div class="left">
+                    <p>Paste the Ouija CSS into the <code>&lt;head&gt;</code> section of your theme's <code>default.hbs</code></p>
+                  </div>
+                  <div class="right">
+                    <pre>
+&lt;link rel="stylesheet" href="http://cdn.goinstant.net/ext/ouija/0.1.0/ouija.min.css"&gt;&lt;/script&gt;
+                    </pre>
+                  </div>
+                </li>
+                <li>
+                  <div class="left">
+                    <p>Add the Ouija snippet before your closing <code>&lt;/body&gt;</code> tag. Replace <code>YOURACCOUNT/YOURAPP</code> with your GoInstant details. <small>Ghost uses GoInstant to sync messages in realtime. Not a member yet? <a href="https://goinstant.com/signup?src=ouija" target="_blank">Sign up here.</a></small></p>
+                  </div>
+                  <div class="right">
+                    <pre>{{#with post}}
+&lt;script&gt;
+  window.ouija_connect_url = 'https://goinstant.net/YOURACCOUNT/YOURAPP'
+  window.ouija_identifier = {{id}};
+&lt;/script&gt;
+&lt;script src="https://cdn.goinstant.net/v1/platform.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset "js/ouija.js"}}"&gt;&lt;/script&gt;
+{{/with}}</pre>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </article>
     </section>
     <footer id="footer">
+      <section class="social">
+      <ul>
+        <li>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-text="Use @tryghost? Want comments? Use @ouijaforghost! http://ouija.io" data-size="large">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+        <li>
+          <iframe src="http://ghbtns.com/github-btn.html?user=goinstant&repo=ouija&type=watch&count=true&size=large"
+            allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+        </li>
+      </ul>
+      </section>
       <h3>Ouija is a project from <a href="http://goinstant.com"><img src="../img/gi.png" alt=""></a></h3>
       <small>&copy; 2014 GoInstant, a Salesforce.com company</small>
     </footer>
+    <a href="https://github.com/goinstant/ouija"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 1000;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
     <script src="js/main.js"></script>
