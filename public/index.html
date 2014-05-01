@@ -68,27 +68,39 @@
       <article id="readme" class="readme">
         <h2>How to Install Ouija</h2>
         <div class="banner">
-          <h4><span class="icon-warning"></span> Note: Ouija is not yet ready for production use.</h4>
+          <h4><span class="icon-warning"></span><span> Heads up:</span> Ouija is not yet ready for production use.</h4>
           <p>Have questions about this? <a href="http://github.com/goinstant/ouija/issues" target="_blank">Open an issue here.</a></p>
         </div>
-        <div class="installation">
-          <ol>
-            <li>
-              <p>Clone Ouija into your ghost blog's <code>content/apps</code> folder clone Ouija.</p>
-              <pre class="bash"><code>git clone -b develop https://github.com/goinstant/ouija</code></pre>
-            </li>
-            <li>
-              <p>Install and gulp</p>
-              <pre class="bash"><code>npm install</code>
+       <div id="tabs">
+          <ul>
+           <li><a href="#" name="tab1">Create a new GoInstant app</a></li>
+           <li><a href="#" name="tab2">Developer setup</a></li>
+           <li><a href="#" name="tab3">Quick installation</a></li>
+         </ul>
+       </div>
+        <div id="tabs-content">
+            <div id="tab1">
+
+            </div>
+            <div id="tab2">
+              <div class="installation">
+                <ol>
+                  <li>
+                    <p>Clone Ouija into your ghost blog's <code>content/apps</code> folder clone Ouija.</p>
+                    <pre class="bash"><code>git clone -b develop https://github.com/goinstant/ouija</code></pre>
+                  </li>
+                  <li>
+                    <p>Install and gulp</p>
+                    <pre class="bash"><code>npm install</code>
 <code>gulp</code></pre>
-            </li>
-            <li>
-              <p>Add the CSS to the <code>&lt;/head&gt;</code> your blog's <code>default.hbs</code> file.</p>
-              <pre>&lt;link rel="stylesheet" type="text/css" href="{{asset "css/ouija.css"}}" /&gt;</pre>
-            </li>
-            <li>
-              <p>Add the Ouija snippet before your closing <code>&lt;/body&gt;</code> tag. Replace <code>YOURACCOUNT/YOURAPP</code> with your GoInstant details. <small>Ghost uses GoInstant to sync messages in realtime. Not a member yet? <a href="https://goinstant.com/signup?src=ouija" target="_blank">Sign up here.</a></small></p>
-              <pre>{{#with post}}
+                  </li>
+                  <li>
+                    <p>Add the CSS to the <code>&lt;/head&gt;</code> your blog's <code>default.hbs</code> file.</p>
+                    <pre>&lt;link rel="stylesheet" type="text/css" href="{{asset "css/ouija.css"}}" /&gt;</pre>
+                  </li>
+                  <li>
+                    <p>Add the Ouija snippet before your closing <code>&lt;/body&gt;</code> tag. Replace <code>YOURACCOUNT/YOURAPP</code> with your GoInstant details. <small>Ghost uses GoInstant to sync messages in realtime. Not a member yet? <a href="https://goinstant.com/signup?src=ouija" target="_blank">Sign up here.</a></small></p>
+                    <pre>{{#with post}}
   &lt;script&gt;
     window.ouija_connect_url = 'https://goinstant.net/YOURACCOUNT/YOURAPP'
     window.ouija_identifier = {{id}};
@@ -96,8 +108,11 @@
   &lt;script src="https://cdn.goinstant.net/v1/platform.min.js"&gt;&lt;/script&gt;
   &lt;script src="{{asset "js/ouija.js"}}"&gt;&lt;/script&gt;
 {{/with}}</pre>
-            </li>
-          </ol>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div id="tab3"></div>
         </div>
       </article>
     </section>
@@ -105,6 +120,7 @@
       <h3>Ouija is a project from <a href="http://goinstant.com"><img src="../img/gi.png" alt=""></a></h3>
       <small>&copy; 2014 GoInstant, a Salesforce.com company</small>
     </footer>
+    <a href="https://github.com/goinstant/ouija"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
     <script src="js/main.js"></script>

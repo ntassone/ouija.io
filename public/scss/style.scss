@@ -21,6 +21,16 @@ body {
   background-attachment: fixed;
 }
 
+//preloader
+body,
+.main-wrapper {
+  opacity: 1;
+  @include transition(opacity .25s linear);
+  &.preload {
+    opacity: 0;
+  }
+}
+
 a {
   color: $color-body;
   @include transition(all .1s linear);
@@ -300,18 +310,8 @@ h1 {
   position: relative;
   padding-top: $margin;
   border-top: 3px solid $purpleDark;
-  > div {
-    @include span-columns(10);
-    @include shift(1);
-  }
-  .installation {
-    background: $purpleDark;
-    margin-bottom: 80px;
-    padding: $margin/2 0 $margin $margin;
-    border-radius: 0 0 4px 4px;
-  }
   h2 {
-    margin: $margin $margin/2 $margin*2;
+    margin: $margin $margin/2;
     text-align: center;
   }
   ol {
@@ -337,8 +337,8 @@ h1 {
         border-radius: 50%;
         text-align: center;
         font-weight: bold;
-        background: $orange;
-        color: $purpleDark;
+        background: fade-out($orange, .9);
+        color: $orange;
       }
     }
     p {
@@ -364,7 +364,7 @@ h1 {
     pre {
       @include span-columns(8);
       margin-top: 0;
-      border-radius: 3px 0 0 3px;
+      border-radius: 4px;
     }
   }
   code, pre {
@@ -391,10 +391,12 @@ h1 {
 }
 
 .banner {
+  @include span-columns(6);
+  @include shift(3);
   padding: $margin;
-  border-radius: 4px 4px 0 0;
-  background: fade-out(white, .9);
-  border-bottom: 2px solid $orange;
+  margin-bottom: $margin*3;
+  border-radius: 4px;
+  background: fade-out($beige, .9);
   text-align: center;
   font-size: .9em;
   p, h4 {
@@ -410,10 +412,65 @@ h1 {
   }
   h4 {
     font-size: 18px;
-    .icon-warning {
+    font-weight: 300;
+    span {
       color: $orange;
+      font-weight: bold;
     }
   }
+}
+
+#tabs {
+  ul {
+    @include row(table);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    @include span-columns(4);
+    @include pad(0);
+    text-align: center;
+    border-right: 2px solid $purple;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+  a {
+    display: block;
+    position: relative;
+    padding: $margin;
+    text-decoration: none;
+    border-bottom: 3px solid fade-out(white, .75);
+    color: white;
+    font-weight: $light;
+    font-size: 18px;
+    &:hover,
+    &:hover,
+    &:focus,
+    &:focus:after {
+      color: $beige;
+      border-bottom-color: $beige;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+  #current {
+    a {
+      border-bottom-color: $orange;
+      color: $orange;
+      z-index: 3;
+    }
+  }
+}
+
+#tabs-content {
+  position: relative;
+  margin-bottom: 80px;
+  padding: $margin;
+  z-index: 2;
+  background: $purpleDark;
 }
 
 #footer {
