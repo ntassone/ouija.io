@@ -534,7 +534,7 @@ body {
   color: #eee;
   font-family: "runda", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  background: url(../img/dust.png);
+  background: #403c54 url(../img/dust.png);
   background-attachment: fixed; }
 
 body,
@@ -904,6 +904,9 @@ h1 {
       color: #aaa6bf; }
       .readme ol .left:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 600px) {
+        .readme ol .left {
+          width: 100%; } }
       .readme ol .left p {
         margin-top: 0; }
       .readme ol .left code {
@@ -925,6 +928,9 @@ h1 {
       border-radius: 4px; }
       .readme ol .right:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 600px) {
+        .readme ol .right {
+          width: 100%; } }
   .readme code, .readme pre {
     font-family: "inconsolata", monospace, sans-serif;
     letter-spacing: .025em;
@@ -956,6 +962,10 @@ h1 {
   font-size: .9em; }
   .banner:last-child {
     margin-right: 0; }
+  @media screen and (max-width: 740px) {
+    .banner {
+      width: 100%;
+      margin-left: 0%; } }
   .banner p, .banner h4 {
     margin: 0; }
     .banner p a, .banner h4 a {
@@ -971,46 +981,70 @@ h1 {
       color: #ff7e22;
       font-weight: bold; }
 
-#tabs ul {
-  *zoom: 1;
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  list-style: none;
-  padding: 0;
-  margin: 0; }
-  #tabs ul:before, #tabs ul:after {
-    content: " ";
-    display: table; }
-  #tabs ul:after {
-    clear: both; }
-#tabs li {
-  display: table-cell;
-  padding-right: 1.76824%;
-  width: 33.5298%;
-  padding: 0;
-  text-align: center;
-  border-right: 2px solid #3f3c53; }
-  #tabs li:last-child {
-    border-right: 0; }
-#tabs a {
-  display: block;
-  position: relative;
-  padding: 20px;
-  text-decoration: none;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.25);
-  color: white;
-  font-weight: 300;
-  font-size: 18px; }
-  #tabs a:hover, #tabs a:hover, #tabs a:focus, #tabs a:focus:after {
-    color: #eedbb6;
-    border-bottom-color: #eedbb6; }
-  #tabs a:focus {
-    outline: 0; }
-#tabs #current a {
-  border-bottom-color: #ff7e22;
-  color: #ff7e22;
-  z-index: 3; }
+#tabs {
+  clear: both; }
+  #tabs ul {
+    *zoom: 1;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    #tabs ul:before, #tabs ul:after {
+      content: " ";
+      display: table; }
+    #tabs ul:after {
+      clear: both; }
+    @media screen and (max-width: 800px) {
+      #tabs ul {
+        margin-bottom: 40px; } }
+  #tabs li {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    padding: 0;
+    text-align: center;
+    border-right: 2px solid #3f3c53; }
+    #tabs li:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 800px) {
+      #tabs li {
+        width: 100%; } }
+    #tabs li:last-child {
+      border-right: 0; }
+      @media screen and (max-width: 800px) {
+        #tabs li:last-child a {
+          border-bottom: 0; } }
+  #tabs a {
+    display: block;
+    position: relative;
+    padding: 20px 0;
+    text-decoration: none;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    font-weight: 300;
+    font-size: 18px; }
+    @media screen and (max-width: 800px) {
+      #tabs a {
+        padding: 10px 0;
+        border-bottom-width: 1px; } }
+    #tabs a:hover, #tabs a:hover, #tabs a:focus, #tabs a:focus:after {
+      color: #eedbb6;
+      border-bottom-color: #eedbb6; }
+      @media screen and (max-width: 800px) {
+        #tabs a:hover, #tabs a:hover, #tabs a:focus, #tabs a:focus:after {
+          border-bottom-color: rgba(255, 255, 255, 0.25); } }
+    #tabs a:focus {
+      outline: 0; }
+  #tabs #current a {
+    border-bottom-color: #ff7e22;
+    color: #ff7e22;
+    z-index: 3; }
+    @media screen and (max-width: 800px) {
+      #tabs #current a {
+        border-bottom-color: rgba(255, 255, 255, 0.25); } }
 
 #tabs-content {
   position: relative;
@@ -1020,10 +1054,11 @@ h1 {
   background: #343144; }
 
 .social {
-  text-align: center;
   margin-bottom: 40px; }
   .social ul {
-    list-style: none; }
+    list-style: none;
+    padding: 0;
+    text-align: center; }
   .social li {
     display: inline-block; }
 
@@ -1032,6 +1067,9 @@ h1 {
   margin-top: 80px;
   text-align: center;
   background: #343144; }
+  @media screen and (max-width: 600px) {
+    #footer {
+      padding: 10px; } }
   #footer h3 {
     margin: 0;
     font-weight: 300;
@@ -1050,6 +1088,12 @@ h1 {
     font-size: .8em;
     letter-spacing: .025em;
     color: #7f7a9f; }
+
+#fork-banner img {
+  position: fixed; }
+  @media screen and (max-width: 600px) {
+    #fork-banner img {
+      position: absolute; } }
 
 @-webkit-keyframes logo {
   0% {

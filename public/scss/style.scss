@@ -17,7 +17,7 @@ body {
   color: #eee;
   font-family: $font-body;
   font-weight: $light;
-  background: url(../img/dust.png);
+  background: #403c54 url(../img/dust.png);
   background-attachment: fixed;
 }
 
@@ -347,6 +347,9 @@ h1 {
       line-height: 1.6;
       text-align: left;
       color: lighten($purpleLight, 40%);
+      @include media(max-width 600px) {
+        @include fill-parent();
+      }
       p {
         margin-top: 0;
       }
@@ -367,6 +370,9 @@ h1 {
       @include span-columns(8);
       margin-top: 0;
       border-radius: 4px;
+      @include media(max-width 600px) {
+        @include fill-parent();
+      }
     }
   }
   code, pre {
@@ -404,6 +410,10 @@ h1 {
   background: fade-out($beige, .9);
   text-align: center;
   font-size: .9em;
+  @include media($mobile) {
+    @include fill-parent();
+    @include shift(0);
+  }
   p, h4 {
     margin: 0;
     a {
@@ -426,36 +436,56 @@ h1 {
 }
 
 #tabs {
+  clear: both;
   ul {
     @include row(table);
     list-style: none;
     padding: 0;
     margin: 0;
+    @include media(max-width 800px) {
+      @include reset-all();
+      margin-bottom: $margin*2;
+    }
   }
   li {
     @include span-columns(4);
     @include pad(0);
     text-align: center;
     border-right: 2px solid $purple;
+    @include media(max-width 800px) {
+      @include fill-parent();
+    }
     &:last-child {
       border-right: 0;
+      a {
+        @include media(max-width 800px) {
+          border-bottom: 0;
+        }
+      }
     }
   }
   a {
     display: block;
     position: relative;
-    padding: $margin;
+    padding: $margin 0;
     text-decoration: none;
     border-bottom: 3px solid fade-out(white, .75);
     color: white;
     font-weight: $light;
     font-size: 18px;
+    @include media(max-width 800px) {
+      padding: $margin/2 0;
+      border-bottom-width: 1px;
+    }
     &:hover,
     &:hover,
     &:focus,
     &:focus:after {
       color: $beige;
       border-bottom-color: $beige;
+      @include media(max-width 800px) {
+        border-bottom-color: fade-out(white, .75);
+      }
     }
     &:focus {
       outline: 0;
@@ -466,6 +496,9 @@ h1 {
       border-bottom-color: $orange;
       color: $orange;
       z-index: 3;
+      @include media(max-width 800px) {
+        border-bottom-color: fade-out(white, .75);
+      }
     }
   }
 }
@@ -479,10 +512,11 @@ h1 {
 }
 
 .social {
-  text-align: center;
   margin-bottom: 40px;
   ul {
     list-style: none;
+    padding: 0;
+    text-align: center;
   }
   li {
     display: inline-block;
@@ -494,6 +528,9 @@ h1 {
   margin-top: 80px;
   text-align: center;
   background: $purpleDark;
+  @include media(max-width 600px) {
+    padding: 10px;
+  }
   h3 {
     margin: 0;
     font-weight: $light;
@@ -516,6 +553,13 @@ h1 {
     font-size: .8em;
     letter-spacing: .025em;
     color: lighten($purpleLight, 25%);
+  }
+}
+
+#fork-banner img {
+  position: fixed;
+  @include media(max-width 600px) {
+    position: absolute;
   }
 }
 
