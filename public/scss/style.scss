@@ -473,10 +473,22 @@ h1 {
   background: $purpleDark;
 }
 
-#footer {
-  background: $purpleDark;
-  padding: 80px;
+.social {
   text-align: center;
+  margin-bottom: 40px;
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+}
+
+#footer {
+  padding: 40px 80px 80px;
+  margin-top: 80px;
+  text-align: center;
+  background: $purpleDark;
   h3 {
     margin: 0;
     font-weight: $light;

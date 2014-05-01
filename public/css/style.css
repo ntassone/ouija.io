@@ -1016,10 +1016,19 @@ h1 {
   z-index: 2;
   background: #343144; }
 
+.social {
+  text-align: center;
+  margin-bottom: 40px; }
+  .social ul {
+    list-style: none; }
+  .social li {
+    display: inline-block; }
+
 #footer {
-  background: #343144;
-  padding: 80px;
-  text-align: center; }
+  padding: 40px 80px 80px;
+  margin-top: 80px;
+  text-align: center;
+  background: #343144; }
   #footer h3 {
     margin: 0;
     font-weight: 300;
