@@ -114,6 +114,14 @@
                     <img src="../img/gi-step-4.png" alt="Turn on Twitter">
                   </div>
                 </li>
+                 <li>
+                  <div class="left">
+                    <p>Copy the contents of <code>config/acl.json</code> to your app's ACL. This gives Ouija the correct permissions to run on your blog. You can change your app's ACL under <strong>Security</strong>.</p>
+                  </div>
+                  <div class="right">
+                    <img src="../img/gi-step-5.png" alt="Turn on Twitter">
+                  </div>
+                </li>
               </ol>
             </div>
           </div>
@@ -163,7 +171,7 @@
                   <div class="right">
                     <pre>{{#with post}}
 &lt;script&gt;
-  window.ouija_connect_url = 'https://goinstant.net/YOURACCOUNT/YOURAPP'
+  window.ouija_connect_url = 'https://goinstant.net/YOURACCOUNT/YOURAPP';
   window.ouija_identifier = {{id}};
 &lt;/script&gt;
 &lt;script src="https://cdn.goinstant.net/v1/platform.min.js"&gt;&lt;/script&gt;
@@ -194,7 +202,7 @@
                   <div class="right">
                     <pre>{{#with post}}
 &lt;script&gt;
-  window.ouija_connect_url = 'https://goinstant.net/YOURACCOUNT/YOURAPP'
+  window.ouija_connect_url = 'https://goinstant.net/YOURACCOUNT/YOURAPP';
   window.ouija_identifier = {{id}};
 &lt;/script&gt;
 &lt;script src="https://cdn.goinstant.net/v1/platform.min.js"&gt;&lt;/script&gt;
