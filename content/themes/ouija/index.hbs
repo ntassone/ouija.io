@@ -1,0 +1,215 @@
+{{!< default}}
+
+<header id="hero">
+  <section>
+    <div class="hero-image">
+      <div class="logo">
+        <div>
+          <img src="{{asset "img/logo.png"}}">
+          <img class="shadow" src="{{asset "img/shadow-logo.svg"}}">
+        </div>
+      </div>
+    </div>
+    <aside>
+      <h1><a href="/">ouija</a></h1>
+      <p>
+        <strong>Spirited conversation.</strong>
+        Add inline comments to your <a href="http://ghost.org" target="_blank">Ghost blog</a>.
+      </p>
+      <a href="#readme" class="button">Install Ouija<small>v0.1.0</small></a>
+    </aside>
+  </section>
+</header>
+<section class="main-wrapper preload">
+  <div class="sign-up"></div>
+  <article class="features">
+    <div class="feature">
+      <aside>
+        <img src="{{asset "img/integrated-commenting.png"}}" alt="">
+      </aside>
+      <article>
+        <h2>Integrated commenting</h2>
+        <p>No longer do commenters need to scroll to the bottom of the page to make a comment. Just insert your thoughts right into the most relevant spot in the article. Ouija takes care of everything.</p>
+      </article>
+    </div>
+  </article>
+  <article class="value-props">
+    <ul>
+      <li>
+        <h3><span class="icon-box"></span> Built for Ghost</h3>
+        <p><a href="http://ghost.org">Ghost</a> needs a commenting system. This is it. Painlessly configure your blog to use Ouija.</p>
+      </li>
+      <li>
+        <h3><span class="icon-stopwatch"></span> Instant realtime notifications</h3>
+        <p>The power of <a href="http://goinstant.com" target="_blank">GoInstant</a> in your comments. See users commenting in real-time without refreshing the page.</p>
+      </li>
+      <li>
+        <h3><span class="icon-brush"></span> Beautifully designed</h3>
+        <p>Built on SASS, Ouija's styling allows you to easily create themes or tweak the default styles. More to come!</p>
+      </li>
+    </ul>
+  </article>
+  <article id="readme" class="readme">
+    <h2>How to Install Ouija</h2>
+    <div class="banner">
+      <h4><span class="icon-warning"></span><span> Heads up:</span> Ouija is not yet ready for production use.</h4>
+      <p>Have questions about this? <a href="http://github.com/goinstant/ouija/issues" target="_blank">Open an issue here.</a></p>
+    </div>
+   <div id="tabs">
+      <ul>
+       <li><a href="#" name="tab1">Quick installation</a></li>
+       <li><a href="#" name="tab2">Developer setup</a></li>
+       <li><a href="#" name="tab3">Create a new GoInstant app</a></li>
+     </ul>
+   </div>
+    <div id="tabs-content">
+      <!-- Create a new Goinstant app -->
+      <div id="tab3">
+        <div class="installation">
+          <ol>
+            <li>
+              <div class="left">
+                <p>If you haven't already, <a href="http://goinstant.com/signup?src=ouija" target="_blank">sign up for GoInstant</a>. From the GoInstant dashboard, <strong>create a new app</strong> for Ouija.</p>
+              </div>
+              <div class="right">
+                <img src="{{asset "img/gi-step-1.png"}}" alt="Create a new GoInstant app">
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                <p>Navigate to your new app's <strong>Authentication</strong> page.</p>
+              </div>
+              <div class="right">
+                <img src="{{asset "img/gi-step-2.png"}}" alt="Navigate to Auth">
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                <p>Add your blog's URL as an <strong>Authorized origin</strong>. If you're working locally, you might want to add <code>localhost</code>, too.</p>
+              </div>
+              <div class="right">
+                <img src="{{asset "img/gi-step-3.png"}}" alt="Add your blogs URL">
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                <p>Ouija commenters login through Twitter (for now). Turn on Twitter in the list of providers. Don't worry about the settings inside the Twitter box.</p>
+              </div>
+              <div class="right">
+                <img src="{{asset "img/gi-step-4.png"}}" alt="Turn on Twitter">
+              </div>
+            </li>
+             <li>
+              <div class="left">
+                <p>Copy the contents of <code>config/acl.json</code> to your app's ACL. This gives Ouija the correct permissions to run on your blog. You can change your app's ACL under <strong>Security</strong>.</p>
+              </div>
+              <div class="right">
+                <img src="{{asset "img/gi-step-5.png"}}" alt="Turn on Twitter">
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <!-- Developer setup -->
+      <div id="tab2">
+        <div class="installation">
+          <ol>
+            <li>
+              <div class="left">
+                <p>Clone Ouija into your ghost blog's <code>content/apps</code> folder.</p>
+              </div>
+              <div class="right">
+                <pre class="bash"><code>git clone git@github.com:goinstant/ouija.git</code></pre>
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                <p>Copy the <code>config/ouija.json.example</code> to <code>config/ouija.json</code> and insert the name of your custom theme folder. If you're using the default theme Casper, you don't need to change anything.</p>
+              </div>
+              <div class="right">
+                <pre>
+{
+"theme" : "mytheme"
+}</pre>
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                <p>Install (through <a href="https://www.npmjs.org/" target="_blank">npm</a>) and <a href="http://gulpjs.com/" target="blank">gulp</a>.</p>
+              </div>
+              <div class="right">
+                <pre class="bash"><code>npm install</code>
+<code>gulp develop</code></pre>
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                <p>Add the CSS to the <code>&lt;head&gt;</code> section of your blog's <code>default.hbs</code> file.</p>
+              </div>
+              <div class="right">
+                <pre>&lt;link rel="stylesheet" type="text/css" href="{{asset "css/ouija.css"}}" /&gt;</pre>
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                <p>Add the Ouija snippet before your closing <code>&lt;/body&gt;</code> tag. Replace <code>YOURACCOUNT/YOURAPP</code> with your GoInstant details. <small>Ghost uses GoInstant to sync messages in realtime. Not a member yet? <a href="https://goinstant.com/signup?src=ouija" target="_blank">Sign up here.</a></small></p>
+              </div>
+              <div class="right">
+                <pre>&#123;&#123;#with post&#125;&#125;
+&lt;script&gt;
+window.ouija_connect_url = 'https://goinstant.net/YOURACCOUNT/YOURAPP';
+window.ouija_identifier = {{id}};
+&lt;/script&gt;
+&lt;script src="https://cdn.goinstant.net/v1/platform.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset "js/ouija.js"}}"&gt;&lt;/script&gt;
+&#123;&#123;/with&#125;&#125;</pre>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <!-- Developer Setup -->
+      <div id="tab1">
+        <div class="installation">
+          <ol>
+            <li>
+              <div class="left">
+                <p>Paste the Ouija CSS into the <code>&lt;head&gt;</code> section of your theme's <code>default.hbs</code></p>
+              </div>
+              <div class="right">
+                <pre>
+&lt;link rel="stylesheet" href="http://cdn.goinstant.net/external/ouija/latest/ouija.min.css"/&gt;
+                </pre>
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                <p>Add the Ouija snippet before your closing <code>&lt;/body&gt;</code> tag. Replace <code>YOURACCOUNT/YOURAPP</code> with your GoInstant details. <small>Ghost uses GoInstant to sync messages in realtime. Not a member yet? <a href="https://goinstant.com/signup?src=ouija" target="_blank">Sign up here.</a></small></p>
+              </div>
+              <div class="right">
+                <pre>&#123;&#123;#with post&#125;&#125;
+&lt;script&gt;
+window.ouija_connect_url = 'https://goinstant.net/YOURACCOUNT/YOURAPP';
+window.ouija_identifier = {{id}};
+&lt;/script&gt;
+&lt;script src="https://cdn.goinstant.net/v1/platform.min.js"&gt;&lt;/script&gt;
+&lt;script src="http://cdn.goinstant.net/external/ouija/latest/ouija.min.js"&gt;&lt;/script&gt;
+&#123;&#123;/with&#125;&#125;</pre>
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                Optionally configure options for Ouija in the previous snippet. More options are being added as we improve Ouija. The current version supports the options on the right.
+              </div>
+              <div class="right">
+                <pre>
+window.ouija_article_content = '.my-article-content';
+window.ouija_section_elements = 'p, ol, :has(img)';</pre>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
